@@ -20,6 +20,7 @@
                 <p>{{ $idea->created_at }}</p>
                 <p class="card-text">{{ $idea->content }}</p>
             </div>
+            @include('shared.comments')
         </div>
 
 
