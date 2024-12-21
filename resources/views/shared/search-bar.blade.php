@@ -13,7 +13,7 @@
             </div>
         </div>
         <div class="card-body">
-            <p>test</p>
+
         </div>
     </div>
 

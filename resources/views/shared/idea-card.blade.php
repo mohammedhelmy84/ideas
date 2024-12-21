@@ -1,8 +1,8 @@
 
-        <div class="card mb-2">
+        <div class="card mb-2 border-warning">
             <div class="card-header">
                 <div class="d-flex justify-content-between">
-                    <div>&#128578; {{ $idea->id }}</div>
+                    <div>&#128578; {{ $idea->user->name }}</div>
                     <div>
                         <form action="{{route('idea.destroy',$idea->id)}}" method="POST">
                             <a href="{{route('idea.edit',$idea->id)}}">Edit</a>
