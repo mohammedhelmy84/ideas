@@ -14,6 +14,6 @@ class CommentController extends Controller
         $comment->user_id = auth()->id();
         $comment->content = request()->get('content');
         $comment->save();
-        return redirect()->route('idea.show',$idea->id)->with('success',"comment added successfuly");
+        return redirect()->route('dashboard')->with('success',"comment added successfuly");
     }
 }

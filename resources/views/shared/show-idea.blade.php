@@ -1,4 +1,7 @@
 @extends('layout.app')
+@section('navbar')
+@include('layout.nav')
+@endsection
 @section('content')
 @session('success')
 @include('shared.success-message')
@@ -37,20 +40,4 @@
             @endif
         </div>
     </div>
-
-
-<div class="card-body">
-    <form action="{{route('idea.comments.store',$idea->id)}}" method="post">
-        @csrf
-          <div class="mb-3">
-            <label for="exampleFormControlTextarea1" class="form-label">Comment</label>
-            <textarea class="form-control" name="content" id="exampleFormControlTextarea1" rows="3" placeholder="Add Comment"></textarea>
-          </div>
-          <div class="row mb-3 align-items-end">
-            <div class="col-2">
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </div>
-          </div>
-     </form>
-</div>
 @endsection

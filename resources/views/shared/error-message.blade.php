@@ -1,5 +1,5 @@
 <div class="alert alert-danger" role="alert" id="message">
-    A simple danger alert—check it out!
+    {{$message}}
     <button type="button" class="btn-close" aria-label="Close"></button>
 </div>
 <script>

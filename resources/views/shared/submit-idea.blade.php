@@ -3,7 +3,7 @@
 <div class="card-header">
 <div class="card-body">
 <div class="row">
-    <form action="{{route('idea.create')}}" method="post">
+    <form action="{{route('idea.store')}}" method="post">
         @csrf
         <div class="mb-3">
             <textarea name="content" id="idea" cols="100" rows="5"></textarea>
