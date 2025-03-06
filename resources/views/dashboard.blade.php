@@ -1,4 +1,7 @@
 @extends('layout.app')
+@section('title')
+  dashboard
+@endsection
 @section('navbar')
 @include('layout.nav')
 @endsection

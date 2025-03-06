@@ -7,7 +7,15 @@
 @include('shared.success-message')
 @endsession
 
-
+@if ($errors->any())
+<div class="alert alert-danger">
+    <ul>
+        @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+        @endforeach
+    </ul>
+</div>
+@endif
     <div class="card mt-2">
         <div class="card-header">
             <p>&#128204;</p>
@@ -20,7 +28,7 @@
         </div>
         <div class="card-body">
             <h5 class="card-title">Post</h5>
-            <span><i class="las la-thumbs-up" style="color:cornflowerblue; font-size:16px;"></i>{{ $idea->likes }}</span>
+               @include('shared.likebutton')
             <p>{{ $idea->created_at }}</p>
             @if ($editing ?? false)
                 <div class="row">
