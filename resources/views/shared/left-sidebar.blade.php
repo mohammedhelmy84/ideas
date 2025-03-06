@@ -7,6 +7,10 @@
                                     <span>Home</span></a>
                             </li>
                             <li class="nav-item">
+                                <a class="{{(Request::is('feed')) ? 'bg-dark rounded text-light':''}} nav-link" href="{{ route('feed') }}">
+                                    <span>Feed</span></a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="{{(Request::is('terms')) ? 'bg-dark rounded text-light':''}} nav-link" href="{{ route('terms') }}">
                                     <span>Terms</span></a>
                             </li>

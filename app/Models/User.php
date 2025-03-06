@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
+
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
@@ -23,6 +24,7 @@ class User extends Authenticatable
         'bio',
         'email',
         'password',
+        'is_admin',
     ];
 
     /**
@@ -62,6 +64,14 @@ class User extends Authenticatable
 
     public function follows(User $user){
         return $this->followings()->where('user_id',$user->id)->exists();
+    }
+
+    public function likes(){
+        return $this->belongsToMany(Idea::class,'idea_like')->withTimestamps();
+    }
+
+    public function likesIdea(Idea $user){
+        return $this->likes()->where('idea_id',$user->id)->exists();
     }
 
     public function getImageURL(){

@@ -34,21 +34,21 @@
                     </span> {{$user->comment()->count()}} </a>
             </div>
             @auth
-            @if (Auth::id() !== $user->id)
+        
             <div class="mt-3">
-                @if (Auth::user()->follows($user))
+                @if (Auth::user()->id !==$user->id)
                 <form method="POST" action="{{route('users.unfollow',$user->id)}}">
                     @csrf
                     <button type="submit" class="btn btn-danger btn-sm"> UnFollow </button>
                 </form>
-                @else
+               
                 <form method="POST" action="{{route('users.follow',$user->id)}}">
                     @csrf
                     <button type="submit" class="btn btn-dark btn-sm"> Follow </button>
                 </form>
                 @endif
             </div>
-            @endif
+         
             @endauth
         </div>
     </div>
